@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
-import { FiMapPin, FiClock, FiArrowRight, FiStar } from 'react-icons/fi'
+import { FiMapPin, FiClock, FiArrowRight, FiStar, FiCheck } from 'react-icons/fi'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -41,8 +41,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Green Background with User Images */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         {/* Background Images */}
         <div className="absolute inset-0">
           {heroImages.map((img, idx) => (
@@ -56,7 +56,6 @@ export default function Home() {
               }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-amber-900/40" />
         </div>
 
         {/* Floating Elements */}
@@ -67,7 +66,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
           <div className="mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="inline-flex items-center gap-3 bg-stone-900/50 backdrop-blur-md rounded-full px-6 py-3 border border-amber-500/30">
+            <div className="inline-flex items-center gap-3 bg-green-900/70 backdrop-blur-md rounded-full px-6 py-3 border border-amber-500/30">
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
               <span className="text-amber-400 font-semibold tracking-wide">LET'S EXPLORE ZIMBABWE</span>
             </div>
@@ -76,13 +75,13 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <span className="text-white">Experience</span>
             <br />
-            <span className="text-gradient">Africa's Heart</span>
+            <span className="text-amber-500">Africa's Heart</span>
             <br />
             <span className="text-3xl md:text-5xl font-medium text-white mt-4 block">Like Never Before</span>
           </h1>
 
           <div className="max-w-3xl mx-auto mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed bg-stone-900/50 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+            <p className="text-xl md:text-2xl text-gray-100 leading-relaxed bg-green-900/60 backdrop-blur-md rounded-2xl p-6 border border-white/10">
               From the thunderous Victoria Falls to the majestic Big Five, embark on unforgettable adventures that connect you with Zimbabwe's wild beauty and rich heritage.
             </p>
           </div>
@@ -90,7 +89,7 @@ export default function Home() {
           {/* Features */}
           <div className="flex flex-wrap justify-center gap-4 mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
             {['Victoria Falls Adventures', 'Big Five Safaris', 'Cultural Heritage'].map((feature, idx) => (
-              <div key={idx} className="glass-card px-6 py-3 text-gray-200 flex items-center gap-2">
+              <div key={idx} className="bg-green-900/60 backdrop-blur-md border border-amber-500/20 px-6 py-3 text-gray-100 flex items-center gap-2 rounded-xl">
                 <span className={idx === 0 ? 'text-blue-400' : idx === 1 ? 'text-amber-500' : 'text-purple-400'}>●</span>
                 {feature}
               </div>
@@ -105,7 +104,7 @@ export default function Home() {
               </button>
             </Link>
             <Link to="/destinations/victoria-falls">
-              <button className="glass-card border-2 border-white/30 text-white font-semibold py-4 px-10 rounded-xl text-lg backdrop-blur-md transition-all duration-300 hover:bg-white/10">
+              <button className="bg-green-900/70 backdrop-blur-md border-2 border-white/30 text-white font-semibold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:bg-white/10">
                 View Packages
               </button>
             </Link>
@@ -130,7 +129,7 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="glass-card rounded-full p-3">
+          <div className="bg-green-900/70 backdrop-blur-md rounded-full p-3">
             <FiArrowRight className="w-6 h-6 text-white rotate-90" />
           </div>
         </div>
@@ -219,8 +218,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gradient-to-br from-green-900 via-green-950 to-green-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 text-9xl text-amber-600">✦</div>
+          <div className="absolute bottom-20 right-20 text-9xl text-amber-600">✦</div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Why Choose <span className="text-amber-500">Papio Africa</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Experience the difference of traveling with Zimbabwe's premier tourism partner
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🏆',
+                title: '10+ Years Experience',
+                desc: 'Established in 2014, we have years of expertise creating unforgettable African adventures for travelers from around the world.'
+              },
+              {
+                icon: '🛡️',
+                title: 'Licensed & Insured',
+                desc: 'Fully licensed tourism operator with comprehensive insurance coverage for your peace of mind throughout your journey.'
+              },
+              {
+                icon: '⭐',
+                title: '5-Star Reputation',
+                desc: 'Consistently rated 5 stars by hundreds of satisfied travelers on TripAdvisor and Google reviews.'
+              },
+              {
+                icon: '🚐',
+                title: 'Modern Fleet',
+                desc: 'Our fleet of well-maintained vehicles ensures comfortable and safe transportation across Zimbabwe.'
+              },
+              {
+                icon: '🌍',
+                title: 'Local Experts',
+                desc: 'Our passionate team of local guides know every corner of Zimbabwe and share authentic cultural insights.'
+              },
+              {
+                icon: '💬',
+                title: '24/7 Support',
+                desc: 'Round-the-clock customer support to assist you before, during, and after your adventure.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-amber-500/20 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 group">
+                <div className="text-5xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trending Activities */}
-      <section className="py-20 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 relative">
+      <section className="py-20 bg-gradient-to-br from-green-800 via-green-900 to-green-950 relative">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 text-9xl text-amber-600">✦</div>
           <div className="absolute bottom-20 right-20 text-9xl text-amber-600">✦</div>
@@ -231,7 +290,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Trending <span className="text-amber-500">Adventures</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Embark on extraordinary journeys that create lifelong memories
             </p>
           </div>
@@ -252,9 +311,9 @@ export default function Home() {
             {featuredActivities.map((activity) => (
               <SwiperSlide key={activity.id}>
                 <Link to={`/activities/${activity.slug}`}>
-                  <div className="bg-stone-800/50 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border-2 border-transparent hover:border-amber-500 transition-all duration-500 hover:-translate-y-2 group">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border-2 border-transparent hover:border-amber-500 transition-all duration-500 hover:-translate-y-2 group">
                     <div className="relative h-64 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent z-10" />
                       <img 
                         src={activity.image} 
                         alt={activity.name}
@@ -275,7 +334,7 @@ export default function Home() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-white mb-2">{activity.name}</h3>
-                      <p className="text-gray-400 text-sm line-clamp-2">{activity.description}</p>
+                      <p className="text-gray-300 text-sm line-clamp-2">{activity.description}</p>
                     </div>
                   </div>
                 </Link>
@@ -286,13 +345,13 @@ export default function Home() {
       </section>
 
       {/* Featured Destinations */}
-      <section className="py-20 bg-stone-800">
+      <section className="py-20 bg-gradient-to-br from-green-900 via-green-950 to-green-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Explore Our <span className="text-amber-500">Destinations</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Discover the wonders of Zimbabwe from Victoria Falls to the Eastern Highlands
             </p>
           </div>
@@ -307,10 +366,10 @@ export default function Home() {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => e.target.src = 'https://placehold.co/400x500/d97706/white?text=Destination'}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-900/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-2xl font-bold mb-1">{dest.name}</h3>
-                    <p className="text-sm text-gray-300 line-clamp-2">{dest.description}</p>
+                    <p className="text-sm text-gray-200 line-clamp-2">{dest.description}</p>
                     <div className="flex items-center gap-2 mt-3 text-amber-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                       Explore <FiArrowRight />
                     </div>
@@ -322,7 +381,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link to="/destinations/victoria-falls">
-              <button className="btn-primary">
+              <button className="bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 View All Destinations
               </button>
             </Link>
@@ -331,13 +390,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-stone-800 via-stone-900 to-stone-800">
+      <section className="py-20 bg-gradient-to-br from-green-800 via-green-900 to-green-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               What Our <span className="text-amber-500">Travelers Say</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Real experiences from adventurers who trusted us with their African journey
             </p>
           </div>
@@ -356,13 +415,13 @@ export default function Home() {
           >
             {destinations.map((dest) => dest.testimonial && (
               <SwiperSlide key={dest.id}>
-                <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 h-full">
+                <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20 h-full">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <FiStar key={i} className={`text-${i < dest.testimonial.rating ? 'yellow' : 'gray'}-400`} />
                     ))}
                   </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">"{dest.testimonial.text}"</p>
+                  <p className="text-gray-200 mb-6 leading-relaxed">"{dest.testimonial.text}"</p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">
                       {dest.testimonial.name.charAt(0)}

@@ -55,7 +55,7 @@ export default function StyleOfTravel() {
       description: 'We\'re committed to responsible travel that benefits local communities and protects wildlife.'
     },
     {
-      icon: <FiStar className="w-6 h-6" />,
+      icon: <FaStar className="w-6 h-6" />,
       title: 'Personalized Service',
       description: 'Every traveler is unique. We tailor our tours to your interests, fitness level, and preferences.'
     }
@@ -63,24 +63,22 @@ export default function StyleOfTravel() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/hero/style-hero.jpg')" }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/85 via-stone-900/50 to-amber-900/30" />
-        </div>
+      {/* Hero Section - Green Background */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/hero/style-hero.jpg')" }} />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-            Style of <span className="text-gradient">Travel</span>
+            Style of <span className="text-amber-500">Travel</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Your adventure, your way. Discover the travel style that suits you best
           </p>
         </div>
       </section>
 
       {/* Travel Styles */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-amber-50">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4">
@@ -107,7 +105,7 @@ export default function StyleOfTravel() {
                   <h4 className="font-bold text-stone-800 mb-3">Popular Activities:</h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {style.activities.map((activity, i) => (
-                      <span key={i} className="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm font-medium">
+                      <span key={i} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                         {activity}
                       </span>
                     ))}
@@ -126,26 +124,26 @@ export default function StyleOfTravel() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      {/* Why Choose Us - Green Theme */}
+      <section className="py-20 bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4">
-              The Papio Africa <span className="text-amber-600">Difference</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              The Papio Africa <span className="text-amber-500">Difference</span>
             </h2>
-            <p className="text-xl text-stone-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               What sets us apart from other tour operators in Zimbabwe
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChooseUs.map((item, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 hover:shadow-lg transition-all">
+              <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/20 hover:border-amber-500/50 transition-all">
                 <div className="w-14 h-14 bg-amber-500 rounded-xl flex items-center justify-center text-white mb-4">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-stone-800 mb-3">{item.title}</h3>
-                <p className="text-stone-600 leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -153,13 +151,13 @@ export default function StyleOfTravel() {
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-stone-800">
+      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               How It <span className="text-amber-500">Works</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Planning your adventure is easy with Papio Africa
             </p>
           </div>
@@ -184,7 +182,7 @@ export default function StyleOfTravel() {
       </section>
 
       {/* What's Included */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -228,7 +226,7 @@ export default function StyleOfTravel() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-green-800">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Start Your Adventure?
@@ -238,7 +236,7 @@ export default function StyleOfTravel() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/activities/quadbiking">
-              <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-xl transition-all">
+              <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-xl transition-all hover:scale-105">
                 Explore Activities
               </button>
             </Link>

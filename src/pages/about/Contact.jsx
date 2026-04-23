@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { FiMapPin, FiPhone, FiMail, FiClock, FiCalendar } from 'react-icons/fi'
+import { FiMapPin, FiPhone, FiMail, FiClock, FiCalendar, FiCheck } from 'react-icons/fi'
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
@@ -27,17 +27,15 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/hero/contact-hero.jpg')" }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-900/85 via-stone-900/50 to-amber-900/30" />
-        </div>
+      {/* Hero Section - Green Background */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/hero/contact-hero.jpg')" }} />
         
         <div className="relative z-10 text-center px-6">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-4">
-            Contact <span className="text-gradient">Us</span>
+            Contact <span className="text-amber-500">Us</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Get in touch with us to plan your perfect African adventure
           </p>
         </div>
@@ -48,7 +46,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* WhatsApp */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-amber-100">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-green-100">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FaWhatsapp className="w-8 h-8 text-white" />
               </div>
@@ -78,7 +76,7 @@ export default function Contact() {
             </div>
 
             {/* Bookings */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-amber-100">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border border-blue-100">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FiCalendar className="w-8 h-8 text-white" />
               </div>
@@ -122,8 +120,8 @@ export default function Contact() {
                   </div>
                   <div className="p-8">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <FiMapPin className="text-amber-600" />
+                      <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FiMapPin className="text-green-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-stone-800 mb-1">Location</h3>
@@ -131,8 +129,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <FiClock className="text-amber-600" />
+                      <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FiClock className="text-green-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-stone-800 mb-1">Hours</h3>
@@ -140,8 +138,8 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <FiPhone className="text-amber-600" />
+                      <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FiPhone className="text-green-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-stone-800 mb-1">Phone</h3>
@@ -152,8 +150,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Why Choose Us */}
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 border border-amber-100">
+              {/* Why Choose Us - Green Theme */}
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 border border-green-200">
                 <h3 className="text-2xl font-bold text-stone-800 mb-6">Why Choose Us?</h3>
                 <ul className="space-y-4">
                   {[
@@ -165,7 +163,7 @@ export default function Contact() {
                     'Competitive prices'
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-stone-700">
-                      <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+                      <FiCheck className="text-green-600" />
                       {item}
                     </li>
                   ))}
@@ -203,7 +201,7 @@ export default function Contact() {
                       type="text" 
                       name="name" 
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                       placeholder="John Doe"
                     />
                   </div>
@@ -214,7 +212,7 @@ export default function Contact() {
                       type="email" 
                       name="email" 
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -224,7 +222,7 @@ export default function Contact() {
                     <input 
                       type="tel" 
                       name="phone"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                       placeholder="+263 77X XXX XXX"
                     />
                   </div>
@@ -234,7 +232,7 @@ export default function Contact() {
                     <select 
                       name="subject" 
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                     >
                       <option value="">Select a subject</option>
                       <option value="General Inquiry">General Inquiry</option>
@@ -253,14 +251,14 @@ export default function Contact() {
                       name="message" 
                       rows={5}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all resize-none"
                       placeholder="Tell us about your adventure plans..."
                     ></textarea>
                   </div>
                   
                   <button 
                     type="submit"
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-amber-600/30"
+                    className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-green-600/30"
                   >
                     Send Message
                   </button>
@@ -272,7 +270,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-green-700">
+      <section className="py-16 bg-gradient-to-r from-green-600 to-green-800">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready for Your Adventure?
