@@ -18,7 +18,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Green Background with Image */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/hero/contact-hero.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-900/50 to-green-800/70" />
         
