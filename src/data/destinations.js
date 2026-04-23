@@ -54,7 +54,7 @@ export const destinations = [
     region: 'Masvingo',
     highlights: ['Great Zimbabwe Ruins', 'Lake Mutirikwe', 'Rock Art Sites', 'Cultural Tours'],
     image: '/assets/images/manaPools-landing.png',
-    heroImage: '/assets/images/tourhero.png',
+    heroImage: '/assets/images/stylle 5.png',
     activities: ['great-zimbabwe-tour', 'lake-tours', 'cultural-visits', 'rock-art-tours'],
     testimonial: {
       name: 'Emily Chang',
@@ -142,7 +142,7 @@ export const destinations = [
     region: 'Harare',
     highlights: ['Botanical Gardens', 'Vibrant Nightlife', 'Shopping Districts', 'Historical Sites'],
     image: '/assets/images/papio lunch.png',
-    heroImage: '/assets/images/stylle 2.png',
+    heroImage: '/assets/images/Game Drive.png',
     activities: ['city-tours', 'museum-visits', 'shopping-tours', 'food-tours'],
     testimonial: {
       name: 'Robert Chen',

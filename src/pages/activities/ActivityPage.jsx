@@ -2,10 +2,6 @@ import { useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { FiMapPin, FiClock, FiCheck, FiArrowRight, FiStar, FiCalendar, FiX, FiSend } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
 import { activities } from '../../data/activities'
 import { destinations } from '../../data/destinations'
 
@@ -116,15 +112,17 @@ export default function ActivityPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Green Background */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
+      {/* Hero Section - With Overlay */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${activity.heroImage || activity.image}')` }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-900/50 to-green-800/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-green-950/60 via-transparent to-green-900/40" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <span className="inline-block px-4 py-2 rounded-full bg-green-900/70 backdrop-blur-sm border border-amber-500/30 text-amber-400 font-medium mb-4">
             ADVENTURE ACTIVITY
           </span>
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6">{activity.name}</h1>
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 heading-underline">{activity.name}</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">{activity.description}</p>
         </div>
       </section>
@@ -135,10 +133,10 @@ export default function ActivityPage() {
           {/* Overview & Highlights */}
           <div className="grid lg:grid-cols-3 gap-12 mb-16">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-stone-800 mb-6">Experience the Thrill</h2>
+              <h2 className="text-3xl font-bold text-stone-800 mb-6 heading-underline">Experience the Thrill</h2>
               <p className="text-lg text-stone-600 leading-relaxed mb-8">{activity.longDescription}</p>
               
-              <h3 className="text-xl font-bold text-stone-800 mb-4">What's Included</h3>
+              <h3 className="text-xl font-bold text-stone-800 mb-4 heading-decor">What's Included</h3>
               <div className="grid grid-cols-2 gap-4">
                 {activity.highlights.map((highlight, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-4 bg-white rounded-xl border border-green-200">
@@ -163,7 +161,10 @@ export default function ActivityPage() {
                         <span className="flex items-center gap-1"><FiMapPin /> {pkg.location}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-amber-400">${pkg.price}</span>
+                        <div>
+                          <span className="text-2xl font-bold text-amber-400">${pkg.price}</span>
+                          {pkg.parkFees > 0 && <span className="text-gray-400 text-xs block">+ ${pkg.parkFees} park fees</span>}
+                        </div>
                         <button onClick={() => openBooking(pkg)} className="text-sm text-white font-medium hover:text-amber-400 transition-colors">
                           Book Now
                         </button>
@@ -181,10 +182,10 @@ export default function ActivityPage() {
 
           {/* Packages Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-stone-800 mb-6">Available Packages</h2>
+            <h2 className="text-3xl font-bold text-stone-800 mb-6 heading-underline">Available Packages</h2>
             <div className="space-y-6">
-              {activity.packages.map((pkg) => (
-                <div key={pkg.id} className="grid lg:grid-cols-3 gap-8 bg-white rounded-3xl shadow-xl overflow-hidden border border-green-100">
+              {activity.packages.map((pkg, idx) => (
+                <div key={pkg.id} className="grid lg:grid-cols-3 gap-8 bg-white rounded-3xl shadow-xl overflow-hidden border border-green-100 card-3d">
                   <div className="lg:col-span-2 p-8">
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -196,7 +197,8 @@ export default function ActivityPage() {
                       </div>
                       <div className="text-right">
                         <span className="text-4xl font-bold text-amber-600">${pkg.price}</span>
-                        <span className="text-stone-500">/person</span>
+                        {pkg.parkFees > 0 && <span className="text-stone-500 text-sm block">+ ${pkg.parkFees} park fees</span>}
+                        <span className="text-stone-500 text-sm">/person</span>
                       </div>
                     </div>
                     
@@ -236,42 +238,9 @@ export default function ActivityPage() {
             </div>
           </div>
 
-          {/* Image Gallery */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-stone-800 mb-6">Experience Gallery</h2>
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              spaceBetween={16}
-              slidesPerView={1}
-              navigation
-              autoplay={{ delay: 4000 }}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              className="rounded-3xl overflow-hidden"
-            >
-              {[1, 2, 3, 4, 5, 6].map((num) => (
-                <SwiperSlide key={num}>
-                  <div className="h-64 md:h-80 bg-stone-200 relative overflow-hidden">
-                    <img 
-                      src={`/assets/images/activities/${activity.id}-${num}.jpg`}
-                      alt={`${activity.name} ${num}`}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = 'none'
-                        e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-100 to-amber-100 text-green-600 text-2xl font-bold">Image ${num}</div>`
-                      }}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
           {/* Testimonials - Green Theme */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-stone-800 mb-6">What Adventurers Say</h2>
+            <h2 className="text-3xl font-bold text-stone-800 mb-6 heading-underline">What Adventurers Say</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {activity.testimonials.map((testimonial, idx) => (
                 <div key={idx} className="bg-gradient-to-br from-green-700 to-green-900 rounded-3xl p-8 border border-amber-500/30">
@@ -297,15 +266,15 @@ export default function ActivityPage() {
 
           {/* Related Destinations */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-stone-800 mb-6">Where to Experience This</h2>
+            <h2 className="text-3xl font-bold text-stone-800 mb-6 heading-underline">Where to Experience This</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedDestinations.map((dest) => (
                 <Link key={dest.id} to={`/destinations/${dest.slug}`} className="group">
-                  <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg">
+                  <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg card-3d">
                     <img 
                       src={dest.image} 
                       alt={dest.name}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 image-3d-hover"
                       onError={(e) => e.target.src = 'https://placehold.co/400x300/d97706/white?text=Destination'}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent" />

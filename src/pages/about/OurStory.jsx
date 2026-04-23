@@ -8,10 +8,11 @@ export default function OurStory() {
       {/* Hero Section - Green Background */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/OurStoryHero.png')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-900/50 to-green-800/70" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-            Our <span className="text-amber-500">Story</span>
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 heading-underline">
+            Our <span className="text-amber-500 heading-decor">Story</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             A journey of passion, adventure, and love for Zimbabwe's incredible landscapes
@@ -25,7 +26,7 @@ export default function OurStory() {
           {/* Introduction */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-4xl font-bold text-stone-800 mb-6">
+              <h2 className="text-4xl font-bold text-stone-800 mb-6 heading-underline">
                 From a Dream to Zimbabwe's Premier Adventure Company
               </h2>
               <div className="space-y-4 text-lg text-stone-600 leading-relaxed">
@@ -45,7 +46,7 @@ export default function OurStory() {
               <img 
                 src="/assets/images/Ourstory-quadbiking.png" 
                 alt="Papio Africa Team"
-                className="relative rounded-3xl shadow-2xl w-full"
+                className="relative rounded-3xl shadow-2xl w-full image-3d-hover"
                 onError={(e) => e.target.src = 'https://placehold.co/600x500/d97706/white?text=Our+Team'}
               />
             </div>
@@ -59,7 +60,7 @@ export default function OurStory() {
               { number: '50+', label: 'Destinations', icon: '★' },
               { number: '100%', label: 'Satisfaction', icon: '★' },
             ].map((stat, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-green-700 to-green-900 rounded-2xl p-6 text-center border border-amber-500/30">
+              <div key={idx} className="bg-gradient-to-br from-green-700 to-green-900 rounded-2xl p-6 text-center border border-amber-500/30 card-3d">
                 <div className="text-4xl font-bold text-amber-500 mb-2">{stat.number}</div>
                 <div className="text-gray-200 font-medium">{stat.label}</div>
               </div>
@@ -68,59 +69,37 @@ export default function OurStory() {
 
           {/* Values */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-stone-800 mb-12 text-center">Our Core Values</h2>
+            <h2 className="text-4xl font-bold text-stone-800 mb-12 text-center heading-underline">Our Core Values</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg">
+              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg card-3d">
                 <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
                   <FaHeart className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-stone-800 mb-4">Passion</h3>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4 heading-decor">Passion</h3>
                 <p className="text-stone-600 leading-relaxed">
                   Every adventure we create is driven by our genuine love for Zimbabwe's landscapes, wildlife, and culture. We pour our hearts into every tour.
                 </p>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg">
+              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg card-3d">
                 <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
                   <FaAward className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-stone-800 mb-4">Excellence</h3>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4 heading-decor">Excellence</h3>
                 <p className="text-stone-600 leading-relaxed">
                   We strive for excellence in everything we do, from the quality of our guides to the condition of our equipment. Your safety and satisfaction are our priorities.
                 </p>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg">
+              <div className="bg-white rounded-3xl p-8 border-2 border-transparent hover:border-amber-400 transition-all shadow-lg card-3d">
                 <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
                   <FaUsers className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-stone-800 mb-4">Community</h3>
+                <h3 className="text-2xl font-bold text-stone-800 mb-4 heading-decor">Community</h3>
                 <p className="text-stone-600 leading-relaxed">
                   We believe in giving back to the communities that make our adventures possible. Sustainable tourism benefits everyone.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Team */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-bold text-stone-800 mb-12 text-center">Meet Our Team</h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { name: ' Claudius Mainja', role: 'Founder & CEO', desc: '20+ years in tourism' },
-                { name: 'Tinashe Moyo', role: 'Head Guide', desc: 'Wildlife specialist' },
-                { name: 'Memory Siwale', role: 'Operations Manager', desc: 'Logistics expert' },
-                { name: 'Blessing Dube', role: 'Adventure Lead', desc: 'Extreme sports certified' },
-              ].map((member, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-green-700 to-green-900 rounded-2xl shadow-lg overflow-hidden text-center p-6 border border-amber-500/20">
-                  <div className="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-3xl font-bold text-amber-600">{member.name.charAt(0)}</span>
-                  </div>
-                  <h3 className="font-bold text-white">{member.name}</h3>
-                  <p className="text-amber-400 font-medium text-sm">{member.role}</p>
-                  <p className="text-gray-300 text-xs mt-1">{member.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
 
