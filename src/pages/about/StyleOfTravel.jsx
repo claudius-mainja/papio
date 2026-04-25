@@ -58,7 +58,8 @@ export default function StyleOfTravel() {
       {/* Hero Section - Green Background with Image */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/OurStyle1.png')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 via-green-900/50 to-green-800/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-green-950/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 via-transparent to-green-800/60" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 heading-underline">

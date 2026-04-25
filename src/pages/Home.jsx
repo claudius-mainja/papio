@@ -75,8 +75,8 @@ export default function Home() {
             />
           ))}
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 via-green-900/50 to-green-800/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-green-950/60 via-transparent to-green-900/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 via-green-900/50 to-green-800/70 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-green-950/60 via-transparent to-green-900/40 mix-blend-multiply" />
         </div>
 
         {/* Floating 3D Elements */}
@@ -85,15 +85,15 @@ export default function Home() {
         <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-amber-600/10 rounded-full blur-3xl animate-float-3d" style={{ animationDelay: '4s' }} />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center hero-content-3d">
-          <div className="mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 mt-20 text-center hero-content-3d">
+          <div className="mb-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="inline-flex items-center gap-3 bg-green-900/70 backdrop-blur-md rounded-full px-6 py-3 border border-amber-500/30">
               <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
               <span className="text-amber-400 font-semibold tracking-wide">LET'S EXPLORE ZIMBABWE</span>
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <span className="text-white">Experience</span>
             <br />
             <span className="text-amber-500 heading-decor">Africa's Heart</span>
@@ -279,9 +279,9 @@ export default function Home() {
       </section>
 
       {/* Featured Quadbike Section */}
-      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-amber-900 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-amber-900  mix-blend-multiply relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/assets/images/QuadbikeHero.png')" }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply" style={{ backgroundImage: "url('/assets/images/QuadbikeHero.png')" }} />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">

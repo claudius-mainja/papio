@@ -35,9 +35,11 @@ export default function DestinationPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Green Background */}
+      {/* Hero Section - Green Background with Gradient Overlay */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${destination.heroImage || destination.image}')` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-green-950/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 via-transparent to-green-800/60" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <div className="mb-4 inline-flex items-center gap-2 bg-green-900/70 backdrop-blur-sm rounded-full px-4 py-2 border border-amber-500/30">
