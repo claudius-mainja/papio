@@ -20,7 +20,7 @@ export default function ActivitiesPrices() {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Plain Green Gradient */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         {/* Floating Elements */}
         <div className="absolute top-20 right-20 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl animate-float-3d" />
         <div className="absolute bottom-32 left-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float-3d" style={{ animationDelay: '2s' }} />

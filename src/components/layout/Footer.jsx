@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
-import { FaHeart, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa'
+import { FaHeart, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaArrowUp } from 'react-icons/fa'
 import { SiCashapp } from 'react-icons/si'
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+  
   return (
-    <footer className="bg-gradient-to-br from-green-900 via-green-950 to-green-900 text-white pt-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-green-900 via-green-950 to-green-900 text-white pt-16 pb-24 md:pb-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-amber-500 rounded-full blur-3xl"></div>
@@ -79,28 +83,37 @@ export default function Footer() {
 
         {/* Payment Methods - Full Width */}
         <div className="mb-12">
-          <div className="bg-white/5 p-8 rounded-2xl border border-amber-500/30 backdrop-blur-sm">
-            <h4 className="text-xl font-semibold mb-6 text-amber-400 text-center font-unbounded">We Accept</h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 rounded-lg flex items-center gap-3 font-semibold text-white">
+          <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-amber-500/30 backdrop-blur-sm">
+            <h4 className="text-xl font-semibold mb-4 md:mb-6 text-amber-400 text-left md:text-center font-unbounded">We Accept</h4>
+            <div className="flex flex-wrap gap-3 md:gap-4">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
                 <span className="text-lg">VISA</span>
               </div>
-              <div className="bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 rounded-lg flex items-center gap-3 font-semibold text-white">
+              <div className="bg-gradient-to-r from-red-600 to-red-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
                 <span className="text-lg">Mastercard</span>
               </div>
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 rounded-lg flex items-center gap-3 font-semibold text-white">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
                 <span className="text-lg">PayPal</span>
               </div>
-              <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-3 rounded-lg flex items-center gap-3 font-semibold text-white">
+              <div className="bg-gradient-to-r from-green-600 to-green-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
                 <span className="text-lg">Bank Transfer</span>
               </div>
-              <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 rounded-lg flex items-center gap-3 font-semibold text-white">
+              <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
                 <span className="text-lg">Cash</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 z-50 bg-amber-500 hover:bg-amber-400 text-green-900 p-4 rounded-full shadow-lg transition-all hover:scale-110 hover:-translate-y-1"
+        aria-label="Back to top"
+      >
+        <FaArrowUp className="w-6 h-6" />
+      </button>
 
       {/* Bottom Section - Credits */}
       <div className="border-t border-amber-500/20 pt-8 pb-8">
