@@ -5,24 +5,25 @@ import Footer from './Footer'
 
 export default function Layout() {
   const location = useLocation()
-  const [scrollY, setScrollY] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
   
   useEffect(() => {
+    setIsLoaded(true)
     window.scrollTo(0, 0)
   }, [location])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-green-800 via-green-900 to-green-950 flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 pt-0">
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />

@@ -22,12 +22,19 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #14532d;
   }
   
   body {
-    @apply font-manrope text-white bg-gradient-to-br from-green-900 via-green-950 to-green-900 antialiased;
+    @apply font-manrope text-white antialiased;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom right, #166534, #14532d, #052e16);
+    min-height: 100vh;
+  }
+  
+  #root {
+    min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
