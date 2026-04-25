@@ -68,6 +68,9 @@ export default function Header() {
               <FiPhone className="text-amber-500" />
               <span>+263773 615 333</span>
             </a>
+            <Link to="/activities-prices" className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-1.5 rounded-lg transition-colors text-sm font-semibold">
+              Activities Prices
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-200 hover:bg-blue-600 hover:text-white transition-all">
@@ -183,13 +186,6 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-
-              {/* Activities Prices Button */}
-              <Link to="/activities-prices" className="ml-2">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 font-unbounded text-sm">
-                  Activities Prices
-                </button>
-              </Link>
 
               {/* Book Now Button */}
               <Link to="/about/contact" className="ml-2">
