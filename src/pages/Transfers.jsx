@@ -8,39 +8,35 @@ export default function Transfers() {
       icon: <FaPlane className="w-8 h-8" />,
       title: 'Airport Transfers',
       description: 'Seamless transfers from Victoria Falls International Airport to your hotel or lodge.',
-      includes: ['Flight monitoring', 'Meet & greet service', 'Luggage assistance', 'Private & shared options'],
-      price: 'From $25'
+      includes: ['Flight monitoring', 'Meet & greet service', 'Luggage assistance', 'Private & shared options']
     },
     {
       icon: <FaBus className="w-8 h-8" />,
       title: 'Inter-Hotel Transfers',
       description: 'Comfortable transfers between hotels, lodges, and camping sites across Zimbabwe.',
-      includes: ['Door-to-door service', 'Scenic routes', 'Professional drivers', 'Stopovers available'],
-      price: 'From $20'
+      includes: ['Door-to-door service', 'Scenic routes', 'Professional drivers', 'Stopovers available']
     },
     {
       icon: <FaHotel className="w-8 h-8" />,
       title: 'City Tours',
       description: 'Explore Victoria Falls town and surrounding areas with our guided city transfers.',
-      includes: ['Flexible itineraries', 'Local guide option', 'Shopping trips', 'Restaurant transfers'],
-      price: 'From $40'
+      includes: ['Flexible itineraries', 'Local guide option', 'Shopping trips', 'Restaurant transfers']
     },
     {
       icon: <FaWhatsapp className="w-8 h-8" />,
       title: 'Cross-Border Transfers',
       description: 'Transfers to Livingstone (Zambia), Chobe (Botswana), and other border crossings.',
-      includes: ['Visa assistance info', 'Border crossing support', 'Multiple destinations', 'Day trips'],
-      price: 'From $85'
+      includes: ['Visa assistance info', 'Border crossing support', 'Multiple destinations', 'Day trips']
     }
   ]
 
   const popularRoutes = [
-    { from: 'Victoria Falls Airport', to: 'Victoria Falls Town', price: 25 },
-    { from: 'Victoria Falls Town', to: 'Livingstone (Zambia)', price: 85 },
-    { from: 'Victoria Falls', to: 'Hwange National Park', price: 120 },
-    { from: 'Victoria Falls', to: 'Chobe (Botswana)', price: 150 },
-    { from: 'Victoria Falls', to: 'Kariba', price: 200 },
-    { from: 'Victoria Falls', to: 'Great Zimbabwe (Masvingo)', price: 180 }
+    { from: 'Victoria Falls Airport', to: 'Victoria Falls Town' },
+    { from: 'Victoria Falls Town', to: 'Livingstone (Zambia)' },
+    { from: 'Victoria Falls', to: 'Hwange National Park' },
+    { from: 'Victoria Falls', to: 'Chobe (Botswana)' },
+    { from: 'Victoria Falls', to: 'Kariba' },
+    { from: 'Victoria Falls', to: 'Great Zimbabwe (Masvingo)' }
   ]
 
   const testimonials = [
@@ -51,9 +47,10 @@ export default function Transfers() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Green Background */}
+      {/* Hero Section - Green Background with Gradient Overlay */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-800 via-green-900 to-green-950">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/transfers and logistics.png')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 via-green-900/50 to-green-800/70" />
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
@@ -80,13 +77,8 @@ export default function Transfers() {
           <div className="grid md:grid-cols-2 gap-8">
             {transferServices.map((service, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-amber-500/20 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-white">
-                    {service.icon}
-                  </div>
-                  <div className="text-right">
-                    <span className="text-amber-400 font-bold text-2xl">{service.price}</span>
-                  </div>
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-white mb-4">
+                  {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-gray-300 mb-6">{service.description}</p>
@@ -113,7 +105,7 @@ export default function Transfers() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Popular <span className="text-amber-500">Routes</span>
             </h2>
-            <p className="text-xl text-gray-300">Competitive pricing for all your transfer needs</p>
+            <p className="text-xl text-gray-300">Popular transfer routes we offer</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden border border-amber-500/20">
@@ -130,17 +122,13 @@ export default function Transfers() {
                       <span>{route.to}</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-2xl font-bold text-amber-500">${route.price}</span>
-                    <span className="text-gray-400 text-sm">/person</span>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           <p className="text-center text-gray-500 mt-6 text-sm">
-            * Prices may vary based on group size, vehicle type, and season. Contact us for exact quotes.
+            * Contact us for pricing on any route. Quotes provided upon request.
           </p>
         </div>
       </section>
