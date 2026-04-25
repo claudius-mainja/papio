@@ -15,11 +15,14 @@ const navLinks = {
   ],
   activities: [
     { name: 'Quadbiking', path: '/activities/quadbiking' },
-    { name: 'Tour Experiences', path: '/activities/tour' },
-    { name: 'Air Adventures', path: '/activities/air' },
-    { name: 'River Adventures', path: '/activities/river' },
-    { name: 'Adrenaline', path: '/activities/adrenaline' },
     { name: 'Safari', path: '/activities/safari' },
+    { name: 'River', path: '/activities/river' },
+    { name: 'Air', path: '/activities/air' },
+    { name: 'Adrenaline', path: '/activities/adrenaline' },
+    { name: 'Tours', path: '/activities/tour' },
+    { name: 'Animal Interactions', path: '/activities/animal-interactions' },
+    { name: 'Cultural', path: '/activities/cultural' },
+    { name: "Devil's Pool", path: '/activities/devils-pool' },
   ],
   about: [
     { name: 'Our Story', path: '/about/our-story' },
@@ -181,8 +184,15 @@ export default function Header() {
                 </div>
               </div>
 
+              {/* Activities Prices Button */}
+              <Link to="/activities-prices" className="ml-2">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 font-unbounded text-sm">
+                  Activities Prices
+                </button>
+              </Link>
+
               {/* Book Now Button */}
-              <Link to="/about/contact" className="ml-4">
+              <Link to="/about/contact" className="ml-2">
                 <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/30 font-unbounded">
                   Book Now
                 </button>

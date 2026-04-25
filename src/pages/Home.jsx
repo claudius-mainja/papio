@@ -153,6 +153,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Animated Quadbike Prices Marquee */}
+      <section className="py-4 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <div className="inline-flex items-center gap-8">
+            {quadbikePackages.map((pkg) => (
+              <span key={pkg.id} className="inline-flex items-center gap-2 text-white font-bold">
+                <span className="bg-white text-amber-700 px-3 py-1 rounded-lg text-sm">{pkg.name}</span>
+                <span className="text-2xl">From</span>
+                <span className="text-3xl font-black">${pkg.price}</span>
+                <span className="text-lg">/person</span>
+                <span className="mx-4">|</span>
+              </span>
+            ))}
+            <span className="inline-flex items-center gap-2 text-white font-bold">
+              <span className="bg-white text-amber-700 px-3 py-1 rounded-lg text-sm">Quad Biking 1-Hour</span>
+              <span className="text-2xl">From</span>
+              <span className="text-3xl font-black">$60</span>
+              <span className="text-lg">/person</span>
+              <span className="mx-4">|</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-white font-bold">
+              <span className="bg-white text-amber-700 px-3 py-1 rounded-lg text-sm">Quad Biking 2-Hour</span>
+              <span className="text-2xl">From</span>
+              <span className="text-3xl font-black">$120</span>
+              <span className="text-lg">/person</span>
+              <span className="mx-4">|</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-white font-bold">
+              <span className="bg-green-700 px-3 py-1 rounded-lg text-sm">Safari Adventures</span>
+              <span className="text-2xl">From</span>
+              <span className="text-3xl font-black">$135</span>
+              <span className="text-lg">/person</span>
+              <span className="mx-4">|</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-white font-bold">
+              <span className="bg-green-700 px-3 py-1 rounded-lg text-sm">River Cruises</span>
+              <span className="text-2xl">From</span>
+              <span className="text-3xl font-black">$75</span>
+              <span className="text-lg">/person</span>
+              <span className="mx-4">|</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-white font-bold">
+              <span className="bg-blue-700 px-3 py-1 rounded-lg text-sm">Helicopter Flights</span>
+              <span className="text-2xl">From</span>
+              <span className="text-3xl font-black">$202</span>
+              <span className="text-lg">/person</span>
+            </span>
+          </div>
+        </div>
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+        `}</style>
+      </section>
+
       {/* Filter/Search Section */}
       <section className="py-12 bg-gradient-to-r from-green-700 via-green-800 to-green-900 relative">
         <div className="max-w-7xl mx-auto px-6">
