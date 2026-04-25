@@ -17,6 +17,12 @@ export default function ActivitiesPrices() {
   const featuredQuadbike = activities.find(a => a.id === 'quadbiking')
   const otherActivities = activities.filter(a => a.id !== 'quadbiking')
   
+  const handleBookNow = (activityName, packageName, price) => {
+    const subject = encodeURIComponent(`Booking Request: ${activityName} - ${packageName}`)
+    const body = encodeURIComponent(`I would like to book:\n\nActivity: ${activityName}\nPackage: ${packageName}\nPrice: $${price}\n\nPlease confirm availability and next steps.`)
+    window.location.href = `mailto:info@papioafricaadventures.com?subject=${subject}&body=${body}`
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Plain Green Gradient */}
@@ -66,10 +72,11 @@ export default function ActivitiesPrices() {
                         <span className="text-gray-300 text-sm block">Inclusive of park fees & transfers</span>
                       </div>
                       <Link 
-                        to={`/activities/${featuredQuadbike.slug}`}
+                        onClick={(e) => { e.preventDefault(); handleBookNow(featuredQuadbike.name, pkg.name, pkg.price); }}
+                        to="#"
                         className="bg-white text-green-700 font-semibold py-3 px-6 rounded-lg transition-all hover:scale-105"
                       >
-                        View Details
+                        Book Now
                       </Link>
                     </div>
                   </div>
@@ -133,12 +140,12 @@ export default function ActivitiesPrices() {
                             <span className="text-2xl font-bold text-amber-600">${pkg.price}</span>
                             <span className="text-stone-500 text-xs block">Park fees & transfers included</span>
                           </div>
-                          <Link 
-                            to={`/activities/${activity.slug}`}
+                          <button 
+                            onClick={() => handleBookNow(activity.name, pkg.name, pkg.price)}
                             className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all hover:scale-105"
                           >
-                            Details
-                          </Link>
+                            Book Now
+                          </button>
                         </div>
                       </div>
                     ))}

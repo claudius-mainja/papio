@@ -158,6 +158,13 @@ export default function DestinationPage() {
                 )
               })}
             </div>
+            
+            <div className="text-center mt-8">
+              <Link to="/activities-prices" className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-xl transition-all hover:scale-105">
+                View All Activities & Prices
+                <FiArrowRight />
+              </Link>
+            </div>
           </div>
 
           {/* Testimonial */}
