@@ -252,10 +252,10 @@ export default function ActivityPage() {
                   <p className="text-gray-200 mb-6 leading-relaxed">"{testimonial.text}"</p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold">
-                      {testimonial.name.charAt(0)}
+                      {testimonial.name.split(' ')[0]}
                     </div>
                     <div>
-                      <p className="font-semibold text-white">{testimonial.name}</p>
+                      <p className="font-semibold text-white">{testimonial.name.split(' ')[0]} {testimonial.name.split(' ')[1]?.charAt(0)}.</p>
                       <p className="text-gray-400 text-sm">{testimonial.location}</p>
                     </div>
                   </div>

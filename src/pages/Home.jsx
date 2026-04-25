@@ -502,10 +502,10 @@ export default function Home() {
                   <p className="text-gray-200 mb-6 leading-relaxed">"{dest.testimonial.text}"</p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">
-                      {dest.testimonial.name.charAt(0)}
+                      {dest.testimonial.name.split(' ')[0]}
                     </div>
                     <div>
-                      <p className="text-white font-semibold">{dest.testimonial.name}</p>
+                      <p className="text-white font-semibold">{dest.testimonial.name.split(' ')[0]} {dest.testimonial.name.split(' ')[1]?.charAt(0)}.</p>
                       <p className="text-gray-400 text-sm">{dest.testimonial.location}</p>
                     </div>
                   </div>
