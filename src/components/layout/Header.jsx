@@ -69,7 +69,8 @@ export default function Header() {
               <span>+263773 615 333</span>
             </a>
             <Link to="/activities-prices" className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-1.5 rounded-lg transition-colors text-sm font-semibold">
-              Activities Prices
+              <span>View Our Activity Prices</span>
+              <FiArrowRight size={14} />
             </Link>
           </div>
           <div className="flex items-center gap-3">
