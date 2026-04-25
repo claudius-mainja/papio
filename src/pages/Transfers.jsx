@@ -152,15 +152,13 @@ export default function Transfers() {
                   ))}
                 </div>
                 <p className="text-gray-200 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold">
-                    {testimonial.name.split(' ')[0]}
+<div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-600/30 border border-amber-500/50" />
+                    <div>
+                      <p className="font-semibold text-white">{testimonial.name.split(' ')[0]} {testimonial.name.split(' ')[1]?.charAt(0)}.</p>
+                      <p className="text-gray-400 text-sm">{testimonial.location}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-white">{testimonial.name.split(' ')[0]} {testimonial.name.split(' ')[1]?.charAt(0)}.</p>
-                    <p className="text-gray-400 text-sm">{testimonial.location}</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>

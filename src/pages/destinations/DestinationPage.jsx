@@ -178,15 +178,13 @@ export default function DestinationPage() {
                   ))}
                 </div>
                 <p className="text-xl text-gray-200 mb-6 leading-relaxed">"{destination.testimonial.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold">
-                    {destination.testimonial.name.split(' ')[0]}
+<div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-amber-600/30 border border-amber-500/50" />
+                    <div>
+                      <p className="font-semibold text-white">{destination.testimonial.name.split(' ')[0]} {destination.testimonial.name.split(' ')[1]?.charAt(0)}.</p>
+                      <p className="text-gray-400 text-sm">{destination.testimonial.location}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-white">{destination.testimonial.name.split(' ')[0]} {destination.testimonial.name.split(' ')[1]?.charAt(0)}.</p>
-                    <p className="text-gray-400 text-sm">{destination.testimonial.location}</p>
-                  </div>
-                </div>
               </div>
             </div>
           )}

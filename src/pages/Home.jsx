@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import { FiMapPin, FiClock, FiArrowRight, FiStar, FiSearch, FiFilter } from 'react-icons/fi'
+import { FiMapPin, FiClock, FiArrowRight, FiStar, FiSearch, FiFilter, FiChevronDown, FiPlus, FiMinus } from 'react-icons/fi'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -18,6 +18,34 @@ const heroImages = [
 ]
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState(null)
+  
+  const faqs = [
+    {
+      q: 'What is the best time to visit Victoria Falls?',
+      a: 'The best time to visit Victoria Falls is during the dry season from April to October. Water flow is at its peak from February to May, while the best conditions for game viewing are during the dry months from July to October.'
+    },
+    {
+      q: 'Are the adventure activities safe for children?',
+      a: 'Yes, most activities offer age-appropriate options. Quad biking and most safaris welcome children from 8-12 years depending on the activity. Devil\'s Pool has age restrictions (15+). Contact us for specific activity requirements.'
+    },
+    {
+      q: 'What payment methods do you accept?',
+      a: 'We accept VISA, Mastercard, PayPal, bank transfers, and cash payments. All prices are inclusive of park fees and transfers unless otherwise specified.'
+    },
+    {
+      q: 'Can you arrange custom/private tours?',
+      a: 'Absolutely! We specialize in customized tours tailored to your preferences. Contact us to discuss your requirements and we\'ll create a personalized itinerary.'
+    },
+    {
+      q: 'Do you provide airport transfers?',
+      a: 'Yes, we offer 24/7 airport transfer services from Victoria Falls Airport. Transfers are available to all major destinations including resorts, lodges, and other airports.'
+    },
+    {
+      q: 'Are your safari guides certified?',
+      a: 'All our guides are professionally certified and trained in wildlife safety. We are a licensed tourism operator with over 10 years of experience.'
+    }
+  ]
   const heroRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [searchTerm, setSearchTerm] = useState('')
@@ -501,9 +529,7 @@ export default function Home() {
                   </div>
                   <p className="text-gray-200 mb-6 leading-relaxed">"{dest.testimonial.text}"</p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">
-                      {dest.testimonial.name.split(' ')[0]}
-                    </div>
+                    <div className="w-12 h-12 rounded-full bg-amber-600/30 border border-amber-500/50" />
                     <div>
                       <p className="text-white font-semibold">{dest.testimonial.name.split(' ')[0]} {dest.testimonial.name.split(' ')[1]?.charAt(0)}.</p>
                       <p className="text-gray-400 text-sm">{dest.testimonial.location}</p>
@@ -599,6 +625,45 @@ export default function Home() {
                 Contact Us
               </button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-amber-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 heading-underline">
+              Frequently <span className="text-amber-500 heading-decor">Asked</span> Questions
+            </h2>
+            <p className="text-xl text-stone-600">
+              Everything you need to know about your adventure
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-green-50 transition-colors"
+                >
+                  <span className="text-lg font-semibold text-stone-800 pr-4">{faq.q}</span>
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                    {openFaq === idx ? (
+                      <FiMinus className="w-5 h-5 text-green-700" />
+                    ) : (
+                      <FiPlus className="w-5 h-5 text-green-700" />
+                    )}
+                  </div>
+                </button>
+                {openFaq === idx && (
+                  <div className="px-6 pb-6">
+                    <p className="text-stone-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
