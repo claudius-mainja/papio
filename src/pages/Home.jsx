@@ -279,9 +279,9 @@ export default function Home() {
       </section>
 
       {/* Featured Quadbike Section */}
-      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-amber-900  mix-blend-multiply relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-amber-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply" style={{ backgroundImage: "url('/assets/images/QuadbikeHero.png')" }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-amber-900/70" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
