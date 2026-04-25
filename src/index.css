@@ -25,7 +25,7 @@
   }
   
   body {
-    @apply font-manrope text-white antialiased;
+    @apply font-manrope text-white bg-gradient-to-br from-green-900 via-green-950 to-green-900 antialiased;
     margin: 0;
     padding: 0;
   }
