@@ -241,67 +241,134 @@ export default function Home() {
         `}</style>
       </section>
 
-      {/* Filter/Search Section */}
-      <section className="py-12 bg-gradient-to-r from-green-700 via-green-800 to-green-900 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-amber-500/20">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <FiFilter className="text-amber-500" /> Find Your Adventure
+      {/* Find Your Adventure - Modern Futuristic Search */}
+      <section className="py-16 bg-gradient-to-br from-green-800 via-green-900 to-green-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-amber-500/30 rounded-full blur-3xl animate-float-3d" />
+          <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-500/30 rounded-full blur-3xl animate-float-3d" style={{ animationDelay: '1s' }} />
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 heading-underline">
+              Find Your <span className="text-amber-500 heading-decor">Perfect</span> Adventure
             </h3>
-            <div className="grid md:grid-cols-4 gap-4">
-              <div>
-                <label className="block text-gray-300 text-sm mb-2">Search</label>
-                <div className="relative">
-                  <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                  <input 
-                    type="text" 
-                    placeholder="Search destinations..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none"
-                  />
-                </div>
+            <p className="text-gray-300">Search and discover activities that match your dream experience</p>
+          </div>
+          
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-amber-500/30 shadow-2xl card-3d">
+            {/* Main Search Bar */}
+            <div className="relative mb-6">
+              <div className="flex items-center bg-white/10 rounded-2xl overflow-hidden border border-white/20 focus-within:border-amber-500 focus-within:ring-2 focus-within:ring-amber-500/30 transition-all">
+                <FiSearch className="ml-5 w-6 h-6 text-amber-500 flex-shrink-0" />
+                <input 
+                  type="text" 
+                  placeholder="Search for activities, destinations, experiences..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && setSearchTerm(searchTerm)}
+                  className="flex-1 px-4 py-5 bg-transparent text-white placeholder-gray-400 text-lg focus:outline-none"
+                />
+                <button 
+                  onClick={() => setSearchTerm(searchTerm)}
+                  className="m-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  <FiSearch size={18} />
+                  <span className="hidden sm:inline">Search</span>
+                </button>
               </div>
+            </div>
+            
+            {/* Quick Filter Pills */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="text-gray-400 text-sm flex items-center">Quick filters:</span>
+              <button 
+                onClick={() => setFilterActivity('')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${!filterActivity ? 'bg-amber-500 text-white' : 'bg-white/10 text-gray-300 hover:bg-white/20'}`}
+              >
+                All Activities
+              </button>
+              <button 
+                onClick={() => setFilterDuration('short')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filterDuration === 'short' ? 'bg-amber-500 text-white' : 'bg-white/10 text-gray-300 hover:bg-white/20'}`}
+              >
+                Half Day
+              </button>
+              <button 
+                onClick={() => setFilterDuration('full')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filterDuration === 'full' ? 'bg-amber-500 text-white' : 'bg-white/10 text-gray-300 hover:bg-white/20'}`}
+              >
+                Full Day
+              </button>
+              <button 
+                onClick={() => setFilterDuration('multi')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filterDuration === 'multi' ? 'bg-amber-500 text-white' : 'bg-white/10 text-gray-300 hover:bg-white/20'}`}
+              >
+                Multi-Day
+              </button>
+            </div>
+            
+            {/* Advanced Filters Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-gray-300 text-sm mb-2">Destination</label>
+                <label className="block text-amber-400 text-sm font-medium mb-2">Destination</label>
                 <select 
                   value={filterDestination}
                   onChange={(e) => setFilterDestination(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none transition-colors"
                 >
-                  <option value="" className="text-gray-800">All Destinations</option>
+                  <option value="" className="text-green-900">All Destinations</option>
                   {destinations.map(d => (
-                    <option key={d.id} value={d.id} className="text-gray-800">{d.name}</option>
+                    <option key={d.id} value={d.id} className="text-green-900">{d.name}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="block text-gray-300 text-sm mb-2">Activity</label>
+                <label className="block text-amber-400 text-sm font-medium mb-2">Activity Type</label>
                 <select 
                   value={filterActivity}
                   onChange={(e) => setFilterActivity(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none transition-colors"
                 >
-                  <option value="" className="text-gray-800">All Activities</option>
+                  <option value="" className="text-green-900">All Types</option>
                   {activities.map(a => (
-                    <option key={a.id} value={a.id} className="text-gray-800">{a.name}</option>
+                    <option key={a.id} value={a.id} className="text-green-900">{a.name}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="block text-gray-300 text-sm mb-2">Duration</label>
+                <label className="block text-amber-400 text-sm font-medium mb-2">Duration</label>
                 <select 
                   value={filterDuration}
                   onChange={(e) => setFilterDuration(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-500 focus:outline-none transition-colors"
                 >
-                  <option value="" className="text-gray-800">Any Duration</option>
-                  <option value="short" className="text-gray-800">Half Day</option>
-                  <option value="full" className="text-gray-800">Full Day</option>
-                  <option value="multi" className="text-gray-800">Multi-Day</option>
+                  <option value="" className="text-green-900">Any Duration</option>
+                  <option value="short" className="text-green-900">Half Day</option>
+                  <option value="full" className="text-green-900">Full Day</option>
+                  <option value="multi" className="text-green-900">Multi-Day</option>
                 </select>
               </div>
             </div>
+            
+            {/* Results Summary */}
+            {searchTerm || filterActivity || filterDestination || filterDuration ? (
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <p className="text-gray-300 text-center">
+                  Showing {filteredActivities.length} {filteredActivities.length === 1 ? 'result' : 'results'}
+                  {searchTerm && <span> for "<span className="text-amber-400">{searchTerm}</span>"</span>}
+                </p>
+                <Link to="/activities-prices" className="inline-flex items-center gap-2 mt-3 text-amber-400 hover:text-amber-300 font-medium transition-colors">
+                  View all activities & prices <FiArrowRight />
+                </Link>
+              </div>
+            ) : (
+              <div className="mt-6 pt-6 border-t border-white/10 text-center">
+                <Link to="/activities-prices" className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105">
+                  Browse All Activities & Prices <FiArrowRight />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </section>
