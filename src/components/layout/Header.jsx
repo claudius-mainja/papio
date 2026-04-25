@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail } from 'react-icons/fi'
+import { FiMenu, FiX, FiChevronDown, FiPhone, FiMail, FiArrowRight } from 'react-icons/fi'
 import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 const navLinks = {
