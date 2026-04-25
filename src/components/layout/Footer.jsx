@@ -85,20 +85,20 @@ export default function Footer() {
         <div className="mb-12">
           <div className="bg-white/5 p-6 md:p-8 rounded-2xl border border-amber-500/30 backdrop-blur-sm">
             <h4 className="text-xl font-semibold mb-4 md:mb-6 text-amber-400 text-left md:text-center font-unbounded">We Accept</h4>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 md:px-6 py-3 md:py-4 rounded-lg flex items-center justify-center gap-2 md:gap-3 font-semibold text-white">
                 <span className="text-lg">VISA</span>
               </div>
-              <div className="bg-gradient-to-r from-red-600 to-red-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
+              <div className="bg-gradient-to-r from-red-600 to-red-700 px-4 md:px-6 py-3 md:py-4 rounded-lg flex items-center justify-center gap-2 md:gap-3 font-semibold text-white">
                 <span className="text-lg">Mastercard</span>
               </div>
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 md:px-6 py-3 md:py-4 rounded-lg flex items-center justify-center gap-2 md:gap-3 font-semibold text-white">
                 <span className="text-lg">PayPal</span>
               </div>
-              <div className="bg-gradient-to-r from-green-600 to-green-700 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
+              <div className="bg-gradient-to-r from-green-600 to-green-700 px-4 md:px-6 py-3 md:py-4 rounded-lg flex items-center justify-center gap-2 md:gap-3 font-semibold text-white">
                 <span className="text-lg">Bank Transfer</span>
               </div>
-              <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-2 md:gap-3 font-semibold text-white text-sm md:text-lg">
+              <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 md:px-6 py-3 md:py-4 rounded-lg flex items-center justify-center gap-2 md:gap-3 font-semibold text-white col-span-2 sm:col-span-1">
                 <span className="text-lg">Cash</span>
               </div>
             </div>
